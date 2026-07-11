@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>دليل تخصصات Business Technology – ERU</title>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #080c14;
+    --bg2: #0d1525;
+    --bg3: #111d35;
+    --blue: #0ea5e9;
+    --blue2: #38bdf8;
+    --orange: #f97316;
+    --green: #22d3a0;
+    --purple: #a78bfa;
+    --pink: #f472b6;
+    --yellow: #fbbf24;
+    --text: #e2e8f0;
+    --muted: #7c8fa8;
+    --border: rgba(14,165,233,0.18);
+    --card: rgba(13,21,37,0.85);
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Cairo', sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── Background texture ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background:
+      radial-gradient(ellipse 80% 50% at 20% 0%, rgba(14,165,233,0.08) 0%, transparent 60%),
+      radial-gradient(ellipse 60% 40% at 80% 100%, rgba(167,139,250,0.07) 0%, transparent 60%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container { max-width: 1100px; margin: 0 auto; padding: 0 24px; position: relative; z-index: 1; }
+
+  /* ── HERO ── */
+  .hero {
+    padding: 70px 0 50px;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(14,165,233,0.12); border: 1px solid rgba(14,165,233,0.3);
+    color: var(--blue2); font-size: 13px; padding: 6px 16px; border-radius: 100px;
+    margin-bottom: 24px; font-weight: 600; letter-spacing: 1px;
+  }
+  .hero h1 {
+    font-size: clamp(2rem, 5vw, 3.4rem);
+    font-weight: 900;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #fff 0%, var(--blue2) 60%, var(--purple) 100%);
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    margin-bottom: 16px;
+  }
+  .hero p { color: var(--muted); font-size: 1.05rem; max-width: 600px; margin: 0 auto 32px; line-height: 1.8; }
+
+  /* ── NAV TABS ── */
+  .nav-tabs {
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+    padding: 28px 0 20px;
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(8,12,20,0.92); backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+  }
+  .nav-tabs a {
+    padding: 8px 20px; border-radius: 8px; font-size: 14px; font-weight: 700;
+    text-decoration: none; transition: all 0.2s;
+    border: 1px solid rgba(255,255,255,0.08);
+    color: var(--muted);
+  }
+  .nav-tabs a:hover { border-color: var(--blue); color: var(--blue); }
+  .nav-tabs a.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+  /* ── SECTION TITLE ── */
+  .section-title {
+    font-size: 1.7rem; font-weight: 900;
+    margin-bottom: 8px;
+  }
+  .section-sub { color: var(--muted); font-size: 0.95rem; margin-bottom: 36px; }
+  .divider { width: 48px; height: 3px; border-radius: 2px; margin-bottom: 12px; }
+
+  section { padding: 60px 0; border-bottom: 1px solid var(--border); }
+
+  /* ── SYSTEM CARDS (نظام الكلية) ── */
+  .tip-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+  .tip-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px; padding: 22px;
+    transition: transform 0.2s, border-color 0.2s;
+    animation: fadeUp 0.5s ease both;
+  }
+  .tip-card:hover { transform: translateY(-4px); border-color: var(--blue); }
+  .tip-card .icon { font-size: 2rem; margin-bottom: 10px; }
+  .tip-card h4 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .tip-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+  .tip-card .highlight { color: var(--blue2); font-weight: 700; }
+
+  /* ── SPEC CARDS ── */
+  .spec-hero {
+    border-radius: 20px; padding: 36px; margin-bottom: 24px;
+    border: 1px solid var(--border);
+    background: var(--card);
+    position: relative; overflow: hidden;
+  }
+  .spec-hero::before {
+    content: attr(data-code);
+    position: absolute; right: -20px; top: -20px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 7rem; font-weight: 700;
+    opacity: 0.04; letter-spacing: -4px;
+    pointer-events: none;
+  }
+  .spec-header { display: flex; flex-wrap: wrap; align-items: flex-start; gap: 16px; margin-bottom: 24px; }
+  .spec-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; }
+  .spec-header h3 { font-size: 1.5rem; font-weight: 900; margin-bottom: 4px; }
+  .spec-header .en { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; opacity: 0.6; }
+  .spec-header .tagline { color: var(--muted); font-size: 0.9rem; line-height: 1.6; }
+
+  .spec-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+  .tag {
+    display: inline-block; padding: 4px 12px; border-radius: 100px;
+    font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px;
+  }
+
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media(max-width:640px) { .two-col { grid-template-columns: 1fr; } }
+
+  .info-box { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 18px; }
+  .info-box h5 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.5px; margin-bottom: 12px; opacity: 0.7; }
+  .info-box ul { list-style: none; }
+  .info-box ul li { font-size: 0.88rem; color: var(--muted); padding: 5px 0; display: flex; gap: 8px; align-items: flex-start; }
+  .info-box ul li::before { content: '▸'; color: var(--blue); flex-shrink: 0; margin-top: 1px; }
+
+  /* ── DIFFICULTY & RANK BARS ── */
+  .meta-row { display: flex; flex-wrap: wrap; gap: 20px; margin-top: 20px; }
+  .meta-item { flex: 1; min-width: 140px; }
+  .meta-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.5px; opacity: 0.6; margin-bottom: 6px; }
+  .bar-track { background: rgba(255,255,255,0.06); border-radius: 100px; height: 7px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 100px; transition: width 1s ease; }
+  .meta-val { font-size: 0.85rem; font-weight: 700; margin-top: 5px; }
+
+  /* ── COMPARISON TABLE ── */
+  .comp-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  .comp-table th {
+    background: rgba(14,165,233,0.1); padding: 14px 16px;
+    text-align: right; font-size: 0.8rem; letter-spacing: 0.5px; font-weight: 700;
+    border-bottom: 2px solid rgba(14,165,233,0.2);
+  }
+  .comp-table td { padding: 12px 16px; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .comp-table tr:hover td { background: rgba(255,255,255,0.02); }
+  .stars { color: var(--yellow); }
+  .rank-badge {
+    display: inline-block; padding: 3px 10px; border-radius: 6px;
+    font-size: 0.75rem; font-weight: 700;
+  }
+
+  /* ── COURSES LIST ── */
+  .courses-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+  .course-pill {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; padding: 10px 14px;
+    font-size: 0.82rem; color: var(--muted);
+    display: flex; gap: 8px; align-items: center;
+  }
+  .course-pill .dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; margin-top: 2px; }
+
+  /* ── CHOOSE SECTION ── */
+  .choose-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 16px; }
+  .choose-card {
+    border-radius: 14px; padding: 24px;
+    border: 1px solid var(--border);
+    background: var(--card);
+  }
+  .choose-card h4 { font-size: 1rem; font-weight: 800; margin-bottom: 8px; }
+  .choose-card p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+  .choose-card .arrow { font-size: 1.5rem; margin-bottom: 10px; }
+
+  /* ── PATH TIMELINE ── */
+  .timeline { position: relative; padding-right: 24px; }
+  .timeline::before {
+    content: ''; position: absolute; right: 8px; top: 0; bottom: 0;
+    width: 2px; background: linear-gradient(to bottom, var(--blue), var(--purple));
+    border-radius: 2px;
+  }
+  .t-item { position: relative; margin-bottom: 28px; padding-right: 28px; }
+  .t-item::before {
+    content: ''; position: absolute; right: -2px; top: 6px;
+    width: 14px; height: 14px; border-radius: 50%;
+    background: var(--blue); border: 2px solid var(--bg);
+    box-shadow: 0 0 0 3px rgba(14,165,233,0.2);
+  }
+  .t-item h5 { font-size: 0.95rem; font-weight: 700; margin-bottom: 4px; }
+  .t-item p { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+  .t-sem { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; color: var(--blue); margin-bottom: 4px; }
+
+  /* ── ALERTS ── */
+  .alert {
+    border-radius: 12px; padding: 16px 20px; margin-bottom: 16px;
+    border-right: 4px solid;
+    font-size: 0.88rem; line-height: 1.7;
+  }
+  .alert-blue { background: rgba(14,165,233,0.06); border-color: var(--blue); }
+  .alert-orange { background: rgba(249,115,22,0.06); border-color: var(--orange); }
+  .alert-green { background: rgba(34,211,160,0.06); border-color: var(--green); }
+
+  /* ── FOOTER ── */
+  footer {
+    text-align: center; padding: 40px 0;
+    color: var(--muted); font-size: 0.82rem;
+  }
+
+  /* ── GPA CALCULATOR ── */
+  .gpa-wrap {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px;
+  }
+  .gpa-row {
+    display: grid; grid-template-columns: 1fr 100px 130px 40px;
+    gap: 10px; margin-bottom: 10px; align-items: center;
+  }
+  @media(max-width:640px){ .gpa-row{ grid-template-columns: 1fr 1fr; grid-template-areas: "name name" "credit grade" "del del"; } }
+  .gpa-row input, .gpa-row select {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text); border-radius: 8px; padding: 10px 12px;
+    font-family: 'Cairo', sans-serif; font-size: 0.88rem; width: 100%;
+  }
+  .gpa-row input:focus, .gpa-row select:focus { outline: none; border-color: var(--blue); }
+  .gpa-row .del-btn {
+    background: rgba(244,63,94,0.12); color: #fb7185; border: 1px solid rgba(244,63,94,0.25);
+    border-radius: 8px; width: 36px; height: 38px; cursor: pointer; font-size: 1rem;
+    display:flex; align-items:center; justify-content:center; transition: all 0.2s;
+  }
+  .gpa-row .del-btn:hover { background: rgba(244,63,94,0.25); }
+  .gpa-actions { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .btn {
+    padding: 11px 22px; border-radius: 10px; border: none; cursor: pointer;
+    font-family: 'Cairo', sans-serif; font-weight: 700; font-size: 0.9rem;
+    transition: all 0.2s;
+  }
+  .btn-add { background: rgba(14,165,233,0.15); color: var(--blue2); border: 1px solid rgba(14,165,233,0.3); }
+  .btn-add:hover { background: rgba(14,165,233,0.25); }
+  .btn-reset { background: rgba(255,255,255,0.05); color: var(--muted); border: 1px solid rgba(255,255,255,0.1); }
+  .btn-reset:hover { background: rgba(255,255,255,0.1); }
+  .gpa-result {
+    margin-top: 24px; padding: 24px; border-radius: 14px;
+    background: linear-gradient(135deg, rgba(14,165,233,0.1), rgba(167,139,250,0.08));
+    border: 1px solid rgba(14,165,233,0.25);
+    display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between;
+  }
+  .gpa-num { font-size: 2.6rem; font-weight: 900; font-family: 'IBM Plex Mono', monospace; color: var(--blue2); }
+  .gpa-label { font-size: 0.85rem; color: var(--muted); margin-top: 2px; }
+  .gpa-grade-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; margin-top: 20px; }
+  .gpa-grade-table th, .gpa-grade-table td { padding: 8px 10px; text-align: center; border-bottom: 1px solid rgba(255,255,255,0.05); }
+  .gpa-grade-table th { color: var(--muted); font-weight: 700; font-size: 0.75rem; }
+
+  /* ── HOURS CALCULATOR ── */
+  .hours-wrap {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px;
+  }
+  .hours-input-row { display: flex; gap: 14px; flex-wrap: wrap; align-items: flex-end; margin-bottom: 24px; }
+  .field-group { flex: 1; min-width: 180px; }
+  .field-group label { display: block; font-size: 0.82rem; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+  .field-group input, .field-group select {
+    background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1);
+    color: var(--text); border-radius: 10px; padding: 12px 14px;
+    font-family: 'Cairo', sans-serif; font-size: 0.95rem; width: 100%;
+  }
+  .field-group input:focus, .field-group select:focus { outline: none; border-color: var(--blue); }
+
+  .level-track { display: flex; gap: 4px; margin: 24px 0; border-radius: 100px; overflow: hidden; height: 14px; background: rgba(255,255,255,0.05); }
+  .level-seg { flex: 1; position: relative; }
+  .level-seg-fill { height: 100%; background: linear-gradient(90deg, var(--blue), var(--purple)); border-radius: 100px; transition: width 0.6s ease; }
+  .level-labels { display: flex; justify-content: space-between; font-size: 0.72rem; color: var(--muted); margin-top: 6px; }
+
+  .hours-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px,1fr)); gap: 14px; margin-top: 22px; }
+  .hstat { background: rgba(255,255,255,0.03); border-radius: 12px; padding: 18px; text-align: center; }
+  .hstat .num { font-size: 1.8rem; font-weight: 900; font-family: 'IBM Plex Mono', monospace; }
+  .hstat .lbl { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+  /* ── CHECKLIST ── */
+  .checklist-wrap {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 16px; padding: 28px;
+  }
+  .checklist-tabs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 20px; }
+  .cl-tab {
+    padding: 8px 18px; border-radius: 8px; font-size: 0.85rem; font-weight: 700;
+    cursor: pointer; border: 1px solid rgba(255,255,255,0.1); color: var(--muted);
+    background: rgba(255,255,255,0.03); transition: all 0.2s;
+  }
+  .cl-tab.active { background: var(--blue); color: #fff; border-color: var(--blue); }
+
+  .cl-progress-bar { background: rgba(255,255,255,0.06); border-radius: 100px; height: 14px; overflow: hidden; margin-bottom: 4px; }
+  .cl-progress-fill { height: 100%; border-radius: 100px; background: linear-gradient(90deg, var(--green), var(--blue2)); transition: width 0.5s ease; }
+  .cl-progress-text { display: flex; justify-content: space-between; font-size: 0.85rem; color: var(--muted); margin-bottom: 20px; }
+  .cl-progress-text strong { color: var(--blue2); font-size: 1.1rem; }
+
+  .cl-level-title {
+    font-size: 0.85rem; font-weight: 800; color: var(--blue2);
+    margin: 18px 0 10px; padding-bottom: 6px; border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .cl-item {
+    display: flex; align-items: center; gap: 10px;
+    padding: 9px 12px; border-radius: 8px; margin-bottom: 4px;
+    cursor: pointer; transition: background 0.15s;
+  }
+  .cl-item:hover { background: rgba(255,255,255,0.03); }
+  .cl-item input[type=checkbox] { width: 18px; height: 18px; accent-color: var(--green); cursor: pointer; flex-shrink: 0; }
+  .cl-item .cl-name { flex: 1; font-size: 0.87rem; }
+  .cl-item .cl-name.done { color: var(--muted); text-decoration: line-through; }
+  .cl-item .cl-credit { font-size: 0.75rem; color: var(--muted); font-family: 'IBM Plex Mono', monospace; }
+
+  @keyframes fadeUp {
+    from { opacity:0; transform:translateY(20px); }
+    to { opacity:1; transform:translateY(0); }
+  }
+
+  /* scroll animation */
+  .fade-section { opacity: 0; transform: translateY(24px); transition: all 0.5s ease; }
+  .fade-section.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <div class="badge">🎓 الجامعة المصرية الروسية</div>
+    <h1>دليل تخصصات<br>Business Technology</h1>
+    <p>كل حاجة محتاج تعرفها عن الـ 4 تخصصات، فرص الشغل، الصعوبة، وإزاي تنجح في الكلية</p>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav class="nav-tabs">
+  <a href="#system">نظام الكلية</a>
+  <a href="#ba">BA</a>
+  <a href="#mis">MIS</a>
+  <a href="#mki">MKI</a>
+  <a href="#dbf">Fintech</a>
+  <a href="#compare">مقارنة</a>
+  <a href="#gpa">حاسبة GPA</a>
+  <a href="#hours">ساعات التخرج</a>
+  <a href="#checklist">Checklist</a>
+  <a href="#choose">اختار تخصصك</a>
+</nav>
+
+<div class="container">
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 1: نظام الكلية -->
+<!-- ══════════════════════════════════════════ -->
+<section id="system" class="fade-section">
+  <div class="divider" style="background:var(--green)"></div>
+  <div class="section-title">📋 نظام الكلية – إزاي تمشي صح من أول يوم</div>
+  <div class="section-sub">فهم الـ system ده هيفرق معاك كتير في مسيرتك الجامعية</div>
+
+  <div class="alert alert-blue">
+    ⚡ <strong>المعلومة الأهم:</strong> الكلية بتشتغل بنظام الـ Credit Hours – يعني أنت بتتخرج لما تكمل 140 ساعة معتمدة، مش بسنوات.
+  </div>
+
+  <div class="tip-grid">
+    <div class="tip-card" style="animation-delay:0.05s">
+      <div class="icon">🏫</div>
+      <h4>المستويات الأربعة</h4>
+      <p>
+        Level 1: من 0 ساعة<br>
+        Level 2: بعد <span class="highlight">34 ساعة</span><br>
+        Level 3: بعد <span class="highlight">72 ساعة</span><br>
+        Level 4: بعد <span class="highlight">108 ساعة</span><br>
+        التخرج: بعد <span class="highlight">140 ساعة</span>
+      </p>
+    </div>
+    <div class="tip-card" style="animation-delay:0.1s">
+      <div class="icon">📚</div>
+      <h4>التسجيل والمواد</h4>
+      <p>لازم تسجل المادة بعد ما تكمل الـ Pre-requisite بتاعتها. مفيش تسجيل عشوائي. الإرشاد الأكاديمي اختياري بس استخدمه!</p>
+    </div>
+    <div class="tip-card" style="animation-delay:0.15s">
+      <div class="icon">📅</div>
+      <h4>الحضور – الخط الأحمر</h4>
+      <p>لازم تحضر <span class="highlight">75% على الأقل</span> في كل مادة. لو غبت أكتر من 25%، ممنوع تدخل الامتحان النهائي!</p>
+    </div>
+    <div class="tip-card" style="animation-delay:0.2s">
+      <div class="icon">✅</div>
+      <h4>الدرجات والنجاح</h4>
+      <p>حد النجاح الأدنى <span class="highlight">50%</span> (تقدير D-). لو جبت أقل من كده، راسب في المادة دي. الامتحان النهائي ساعتين لكل مادة.</p>
+    </div>
+    <div class="tip-card" style="animation-delay:0.25s">
+      <div class="icon">🎓</div>
+      <h4>اختيار التخصص</h4>
+      <p>بتختار تخصصك في أول المستوى الثالث، بعد ما تكمل <span class="highlight">65 ساعة معتمدة</span> على الأقل.</p>
+    </div>
+    <div class="tip-card" style="animation-delay:0.3s">
+      <div class="icon">☀️</div>
+      <h4>الفصل الصيفي</h4>
+      <p>في فصل صيفي اختياري لمدة 6 أسابيع. تقدر تسجل فيه بحد أقصى <span class="highlight">9 ساعات</span>. استخدمه تعدي أسرع!</p>
+    </div>
+    <div class="tip-card" style="animation-delay:0.35s">
+      <div class="icon">🏆</div>
+      <h4>نصايح النجاح</h4>
+      <p>دوّر على المواد الـ Elective الأسهل. اكمل الـ Pre-requisites بدري. خلي الـ GPA فوق 3.0 من أول ما تقدر.</p>
+    </div>
+    <div class="tip-card" style="animation-delay:0.4s">
+      <div class="icon">🇷🇺</div>
+      <h4>اللغات</h4>
+      <p>لغة التدريس إنجليزي بالكامل. هتاخد روسي 1 و2 إجباري (HM 001-002). ركّز في الإنجليزي من أول يوم!</p>
+    </div>
+  </div>
+
+  <div style="margin-top:36px">
+    <div class="section-title" style="font-size:1.3rem; margin-bottom:16px">🗓️ خريطة المسار الكامل – Business Technology</div>
+    <div class="timeline">
+      <div class="t-item">
+        <div class="t-sem">LEVEL 1 – Semester 1 & 2</div>
+        <h5>أساسيات مشتركة</h5>
+        <p>Microeconomics, Mathematics, Management, Info Systems, Computer Science, Programming Intro, Statistics, Financial Accounting, English 1&2</p>
+      </div>
+      <div class="t-item">
+        <div class="t-sem">LEVEL 2 – Semester 3 & 4</div>
+        <h5>بناء التخصص</h5>
+        <p>Database Systems 1&2, OOP, System Analysis, Business Analytics Intro, Statistics 2, Managerial Accounting, Finance, Marketing, Russian 1&2</p>
+      </div>
+      <div class="t-item">
+        <div class="t-sem">LEVEL 3 – Semester 5 & 6</div>
+        <h5>🎯 بداية التخصص الفعلي</h5>
+        <p>هنا بتتفرع المسارات الأربعة. كل تخصص بياخد مواد مختلفة حسب مساره + مواد مشتركة زي Data Structures, OS, Digital Marketing</p>
+      </div>
+      <div class="t-item">
+        <div class="t-sem">LEVEL 4 – Semester 7 & 8</div>
+        <h5>🚀 Advanced + Graduation Project</h5>
+        <p>مواد تخصصية متقدمة، مشروع التخرج (في جزءين 1 و2)، Scientific Research Methodology إجباري للكل</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 2: BA -->
+<!-- ══════════════════════════════════════════ -->
+<section id="ba" class="fade-section">
+  <div class="divider" style="background:var(--blue)"></div>
+  <div class="spec-hero" data-code="BA">
+    <div class="spec-header">
+      <div class="spec-icon" style="background:rgba(14,165,233,0.15); color:var(--blue)">📊</div>
+      <div>
+        <h3>Business Analytics <span class="en">– BA</span></h3>
+        <div class="en">B.Sc. in Business Analytics</div>
+        <div class="tagline">تخصص الداتا والأرقام – بيحول البيانات لقرارات تجارية</div>
+      </div>
+    </div>
+
+    <div class="spec-tags">
+      <span class="tag" style="background:rgba(14,165,233,0.15); color:var(--blue)">📊 Data</span>
+      <span class="tag" style="background:rgba(14,165,233,0.15); color:var(--blue)">🤖 AI/ML</span>
+      <span class="tag" style="background:rgba(14,165,233,0.15); color:var(--blue)">📈 Statistics</span>
+      <span class="tag" style="background:rgba(14,165,233,0.15); color:var(--blue)">💼 Business</span>
+    </div>
+
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:20px">
+      الـ BA هو تخصص <strong style="color:var(--text)">تحليل البيانات</strong> – بتتعلم إزاي تجمع داتا ضخمة وتحللها وتطلع منها insights تساعد الشركات تاخد قرارات أفضل. هو مزيج من الإحصاء والبرمجة والأعمال. ده من أكتر التخصصات <strong style="color:var(--blue2)">طلبًا في السوق المصري والعالمي</strong> دلوقتي.
+    </p>
+
+    <div class="two-col">
+      <div class="info-box">
+        <h5>📖 مواد مميزة هتاخدها</h5>
+        <ul>
+          <li>Data Structures & Algorithms</li>
+          <li>Statistical Computing</li>
+          <li>Data Warehouse & Data Mining</li>
+          <li>Business Intelligence</li>
+          <li>Predictive & Prescriptive Analytics</li>
+          <li>Machine Learning</li>
+          <li>Big Data Foundations</li>
+          <li>Econometrics for Time Series</li>
+          <li>Data Security</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h5>💼 فرص العمل</h5>
+        <ul>
+          <li>Data Analyst / Business Analyst</li>
+          <li>Data Scientist (بعد تطوير)</li>
+          <li>Business Intelligence Developer</li>
+          <li>مراكز تحليل البيانات الضخمة</li>
+          <li>شركات Consulting</li>
+          <li>البنوك وشركات المال</li>
+          <li>شركات التقنية والتسويق</li>
+          <li>Data-driven Startups</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">الصعوبة الأكاديمية</div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%; background:linear-gradient(90deg, var(--blue), var(--purple))"></div></div>
+        <div class="meta-val" style="color:var(--purple)">صعب ⚡ (رياضيات + كود)</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">الطلب في السوق</div>
+        <div class="bar-track"><div class="bar-fill" style="width:95%; background:linear-gradient(90deg, var(--green), var(--blue))"></div></div>
+        <div class="meta-val" style="color:var(--green)">عالي جداً 🔥</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">متوسط الراتب (مصر)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:88%; background:linear-gradient(90deg, var(--yellow), var(--orange))"></div></div>
+        <div class="meta-val" style="color:var(--yellow)">#1 الأعلى 💰</div>
+      </div>
+    </div>
+
+    <div class="alert alert-blue" style="margin-top:20px">
+      <strong>هو مناسب لك لو:</strong> بتحب الرياضيات والإحصاء، مش بتخاف من الكود، عايز تشتغل في مجال الـ Data Science مستقبلاً.
+    </div>
+    <div class="alert alert-orange" style="margin-top:8px">
+      <strong>مش هيناسبك لو:</strong> بتكره الرياضيات والمعادلات، بتدور على حاجة أبسط تقنيًا.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 3: MIS -->
+<!-- ══════════════════════════════════════════ -->
+<section id="mis" class="fade-section">
+  <div class="divider" style="background:var(--green)"></div>
+  <div class="spec-hero" data-code="MIS">
+    <div class="spec-header">
+      <div class="spec-icon" style="background:rgba(34,211,160,0.15); color:var(--green)">🖥️</div>
+      <div>
+        <h3>Management Information Systems <span class="en">– MIS</span></h3>
+        <div class="en">B.Sc. in MIS</div>
+        <div class="tagline">تخصص أنظمة المعلومات – جسر بين التكنولوجيا وإدارة الأعمال</div>
+      </div>
+    </div>
+
+    <div class="spec-tags">
+      <span class="tag" style="background:rgba(34,211,160,0.15); color:var(--green)">💻 Systems</span>
+      <span class="tag" style="background:rgba(34,211,160,0.15); color:var(--green)">🌐 Web Dev</span>
+      <span class="tag" style="background:rgba(34,211,160,0.15); color:var(--green)">📱 Mobile</span>
+      <span class="tag" style="background:rgba(34,211,160,0.15); color:var(--green)">🏢 Business</span>
+    </div>
+
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:20px">
+      الـ MIS هو التخصص الأشمل في تكنولوجيا الأعمال. بتتعلم <strong style="color:var(--text)">تصميم وإدارة الأنظمة التقنية</strong> داخل الشركات والمؤسسات. بياخد منك برمجة (Web & Mobile) وداتابيز وشبكات وإدارة مشاريع. هو <strong style="color:var(--green)">الأقل صعوبة من BA وDBF</strong> وفرص شغله كتير وواسعة.
+    </p>
+
+    <div class="two-col">
+      <div class="info-box">
+        <h5>📖 مواد مميزة هتاخدها</h5>
+        <ul>
+          <li>Web-Based Applications</li>
+          <li>Mobile Applications Development</li>
+          <li>E-Commerce & Advanced E-Commerce</li>
+          <li>Database Security</li>
+          <li>Business Intelligence</li>
+          <li>Networking & Telecommunications</li>
+          <li>Project Management</li>
+          <li>Advanced IS Topics</li>
+          <li>Strategic Management</li>
+          <li>Communication Skills</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h5>💼 فرص العمل</h5>
+        <ul>
+          <li>Web Developer (Frontend/Backend)</li>
+          <li>Mobile App Developer</li>
+          <li>IT Manager في شركات</li>
+          <li>Systems Analyst</li>
+          <li>E-Commerce Manager</li>
+          <li>Project Manager</li>
+          <li>IT Consultant</li>
+          <li>ERP Specialist</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">الصعوبة الأكاديمية</div>
+        <div class="bar-track"><div class="bar-fill" style="width:60%; background:linear-gradient(90deg, var(--green), var(--blue))"></div></div>
+        <div class="meta-val" style="color:var(--green)">متوسط 👍</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">الطلب في السوق</div>
+        <div class="bar-track"><div class="bar-fill" style="width:80%; background:linear-gradient(90deg, var(--green), var(--blue2))"></div></div>
+        <div class="meta-val" style="color:var(--green)">عالي 📈</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">متوسط الراتب (مصر)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:72%; background:linear-gradient(90deg, var(--yellow), var(--green))"></div></div>
+        <div class="meta-val" style="color:var(--yellow)">#2 كويس 💰</div>
+      </div>
+    </div>
+
+    <div class="alert alert-green" style="margin-top:20px">
+      <strong>هو مناسب لك لو:</strong> بتحب تطوير المواقع والتطبيقات، عايز تشتغل في IT أو Web Development، وعايز توازن بين الأعمال والتقنية.
+    </div>
+    <div class="alert alert-orange" style="margin-top:8px">
+      <strong>نقطة ضعف:</strong> متخصصش في مجال واحد بعمق زي الـ BA في الداتا. هتبقى generalist أكتر من specialist.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 4: MKI -->
+<!-- ══════════════════════════════════════════ -->
+<section id="mki" class="fade-section">
+  <div class="divider" style="background:var(--pink)"></div>
+  <div class="spec-hero" data-code="MKI">
+    <div class="spec-header">
+      <div class="spec-icon" style="background:rgba(244,114,182,0.15); color:var(--pink)">📣</div>
+      <div>
+        <h3>Marketing Intelligence <span class="en">– MKI</span></h3>
+        <div class="en">B.Sc. in Marketing Intelligence</div>
+        <div class="tagline">تخصص الذكاء التسويقي – التسويق بالداتا والـ AI</div>
+      </div>
+    </div>
+
+    <div class="spec-tags">
+      <span class="tag" style="background:rgba(244,114,182,0.15); color:var(--pink)">📢 Marketing</span>
+      <span class="tag" style="background:rgba(244,114,182,0.15); color:var(--pink)">🤖 AI</span>
+      <span class="tag" style="background:rgba(244,114,182,0.15); color:var(--pink)">📊 Analytics</span>
+      <span class="tag" style="background:rgba(244,114,182,0.15); color:var(--pink)">🛒 E-Marketing</span>
+    </div>
+
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:20px">
+      الـ MKI هو تخصص فريد بيجمع بين <strong style="color:var(--text)">التسويق الرقمي والذكاء الاصطناعي</strong>. مش تسويق تقليدي – ده تسويق مبني على الداتا وتحليل سلوك المستهلك باستخدام الـ AI. ده من <strong style="color:var(--pink)">أحدث التخصصات وفيه طلب متنامي</strong> بسبب붐 الـ Digital Marketing والـ E-Commerce في مصر.
+    </p>
+
+    <div class="two-col">
+      <div class="info-box">
+        <h5>📖 مواد مميزة هتاخدها</h5>
+        <ul>
+          <li>Marketing Intelligence Intro</li>
+          <li>Marketing Research</li>
+          <li>Consumer Behavior</li>
+          <li>E-Marketing</li>
+          <li>Marketing Analytics</li>
+          <li>Brand Management</li>
+          <li>Customer Analytics</li>
+          <li>Customer Relationship Management</li>
+          <li>Predictive Analytics</li>
+          <li>AI Introduction</li>
+          <li>Public Relations</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h5>💼 فرص العمل</h5>
+        <ul>
+          <li>Digital Marketing Manager</li>
+          <li>Marketing Analyst / Data Marketer</li>
+          <li>Brand Manager</li>
+          <li>CRM Specialist</li>
+          <li>E-Commerce Marketing</li>
+          <li>Social Media Strategist (بداتا)</li>
+          <li>Growth Hacker</li>
+          <li>Marketing Consultant</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">الصعوبة الأكاديمية</div>
+        <div class="bar-track"><div class="bar-fill" style="width:55%; background:linear-gradient(90deg, var(--pink), var(--purple))"></div></div>
+        <div class="meta-val" style="color:var(--pink)">الأسهل ✨</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">الطلب في السوق</div>
+        <div class="bar-track"><div class="bar-fill" style="width:75%; background:linear-gradient(90deg, var(--pink), var(--orange))"></div></div>
+        <div class="meta-val" style="color:var(--orange)">كويس ومتنامي 📈</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">متوسط الراتب (مصر)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:62%; background:linear-gradient(90deg, var(--yellow), var(--pink))"></div></div>
+        <div class="meta-val" style="color:var(--yellow)">#3 متوسط-كويس</div>
+      </div>
+    </div>
+
+    <div class="alert alert-green" style="margin-top:20px">
+      <strong>هو مناسب لك لو:</strong> بتحب التسويق والإبداع ومش بتحب الرياضيات الكتير، عايز تشتغل في الـ Digital Marketing والـ E-Commerce.
+    </div>
+    <div class="alert alert-orange" style="margin-top:8px">
+      <strong>انتبه:</strong> التخصص دا ممكن تكمّله بـ freelancing في Digital Marketing من غير ما تتخرج. الشهادة هنا بتضيف عليك الجانب التقني والـ AI.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 5: DBF / Fintech -->
+<!-- ══════════════════════════════════════════ -->
+<section id="dbf" class="fade-section">
+  <div class="divider" style="background:var(--yellow)"></div>
+  <div class="spec-hero" data-code="DBF">
+    <div class="spec-header">
+      <div class="spec-icon" style="background:rgba(251,191,36,0.15); color:var(--yellow)">💳</div>
+      <div>
+        <h3>Digital Banking & Fintech <span class="en">– DBF</span></h3>
+        <div class="en">B.Sc. in Digital Banking & Financial Technology</div>
+        <div class="tagline">تخصص البنوك الرقمية والتكنولوجيا المالية</div>
+      </div>
+    </div>
+
+    <div class="spec-tags">
+      <span class="tag" style="background:rgba(251,191,36,0.15); color:var(--yellow)">🏦 Banking</span>
+      <span class="tag" style="background:rgba(251,191,36,0.15); color:var(--yellow)">₿ Blockchain</span>
+      <span class="tag" style="background:rgba(251,191,36,0.15); color:var(--yellow)">🔐 Crypto</span>
+      <span class="tag" style="background:rgba(251,191,36,0.15); color:var(--yellow)">💰 Finance</span>
+    </div>
+
+    <p style="color:var(--muted); line-height:1.8; margin-bottom:20px">
+      الـ DBF هو أحدث وأجرأ تخصص في الكلية. بيجمع بين <strong style="color:var(--text)">البنوك الرقمية والـ Blockchain والـ Cryptocurrency وإدارة المخاطر المالية</strong>. الكورسات زي Blockchain, Cryptography, Digital Banking – دي مواد <strong style="color:var(--yellow)">مستقبلية جداً</strong> ومطلوبة عالمياً. بس الصعوبة عالية عشان فيه مالية وتقنية متخلطين.
+    </p>
+
+    <div class="two-col">
+      <div class="info-box">
+        <h5>📖 مواد مميزة هتاخدها</h5>
+        <ul>
+          <li>Principles of Digital Banking & Fintech</li>
+          <li>Cryptography Fundamentals</li>
+          <li>Blockchain & Crypto Assets</li>
+          <li>Blockchain Applications</li>
+          <li>Financial Risk Management</li>
+          <li>Financial Derivatives</li>
+          <li>Econometrics for Time Series</li>
+          <li>Data Analytics for Finance</li>
+          <li>International Finance & Banking</li>
+          <li>Distributed Systems</li>
+        </ul>
+      </div>
+      <div class="info-box">
+        <h5>💼 فرص العمل</h5>
+        <ul>
+          <li>Fintech Analyst / Developer</li>
+          <li>Blockchain Developer</li>
+          <li>Digital Banking Specialist</li>
+          <li>Financial Risk Analyst</li>
+          <li>Crypto Asset Analyst</li>
+          <li>البنوك الرقمية (Valu, Fawry, etc.)</li>
+          <li>شركات FinTech Startups</li>
+          <li>المؤسسات المالية الدولية</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <div class="meta-item">
+        <div class="meta-label">الصعوبة الأكاديمية</div>
+        <div class="bar-track"><div class="bar-fill" style="width:90%; background:linear-gradient(90deg, var(--yellow), var(--orange))"></div></div>
+        <div class="meta-val" style="color:var(--orange)">الأصعب 🔥</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">الطلب في السوق</div>
+        <div class="bar-track"><div class="bar-fill" style="width:85%; background:linear-gradient(90deg, var(--yellow), var(--green))"></div></div>
+        <div class="meta-val" style="color:var(--green)">عالي جداً (مستقبلي) 🚀</div>
+      </div>
+      <div class="meta-item">
+        <div class="meta-label">متوسط الراتب (مصر)</div>
+        <div class="bar-track"><div class="bar-fill" style="width:82%; background:linear-gradient(90deg, var(--yellow), var(--orange))"></div></div>
+        <div class="meta-val" style="color:var(--yellow)">#1-2 (مستقبلاً) 💰</div>
+      </div>
+    </div>
+
+    <div class="alert alert-blue" style="margin-top:20px">
+      <strong>هو مناسب لك لو:</strong> بتحب المال والتكنولوجيا مع بعض، عايز تشتغل في البنوك الرقمية أو Blockchain، ومستعد تدرس أصعب مواد.
+    </div>
+    <div class="alert alert-orange" style="margin-top:8px">
+      <strong>انتبه:</strong> المجال ده في مصر لسه في بداياته – الفرص موجودة بس أقل من الـ BA والـ MIS حالياً. مستقبلاً هيبقى الأعلى أجراً.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 6: COMPARISON -->
+<!-- ══════════════════════════════════════════ -->
+<section id="compare" class="fade-section">
+  <div class="divider" style="background:var(--purple)"></div>
+  <div class="section-title">⚖️ مقارنة التخصصات الأربعة</div>
+  <div class="section-sub">جدول مقارنة شامل يساعدك تختار بوضوح</div>
+
+  <div style="overflow-x:auto; border-radius:14px; border:1px solid var(--border)">
+    <table class="comp-table">
+      <thead>
+        <tr>
+          <th>التخصص</th>
+          <th>الصعوبة</th>
+          <th>الطلب الحالي</th>
+          <th>المستقبل</th>
+          <th>الراتب</th>
+          <th>التحيز نحو</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong style="color:var(--blue)">📊 BA</strong><br><small style="color:var(--muted)">Business Analytics</small></td>
+          <td><span class="stars">★★★★☆</span><br><small style="color:var(--muted)">صعب</small></td>
+          <td><span class="rank-badge" style="background:rgba(34,211,160,0.2);color:var(--green)">🔥 عالي جداً</span></td>
+          <td><span class="rank-badge" style="background:rgba(34,211,160,0.2);color:var(--green)">💎 ممتاز</span></td>
+          <td><strong style="color:var(--yellow)">#1 الأعلى</strong></td>
+          <td>Data Science, BI, Analytics</td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--green)">🖥️ MIS</strong><br><small style="color:var(--muted)">Mgmt Info Systems</small></td>
+          <td><span class="stars">★★★☆☆</span><br><small style="color:var(--muted)">متوسط</small></td>
+          <td><span class="rank-badge" style="background:rgba(14,165,233,0.2);color:var(--blue)">📈 عالي</span></td>
+          <td><span class="rank-badge" style="background:rgba(14,165,233,0.2);color:var(--blue)">👍 كويس</span></td>
+          <td><strong style="color:var(--yellow)">#2 كويس</strong></td>
+          <td>Web Dev, Mobile, IT</td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--pink)">📣 MKI</strong><br><small style="color:var(--muted)">Marketing Intelligence</small></td>
+          <td><span class="stars">★★☆☆☆</span><br><small style="color:var(--muted)">الأسهل</small></td>
+          <td><span class="rank-badge" style="background:rgba(244,114,182,0.2);color:var(--pink)">📊 متوسط-عالي</span></td>
+          <td><span class="rank-badge" style="background:rgba(249,115,22,0.2);color:var(--orange)">📈 متنامي</span></td>
+          <td><strong style="color:var(--yellow)">#3 متوسط</strong></td>
+          <td>Digital Marketing, Brands</td>
+        </tr>
+        <tr>
+          <td><strong style="color:var(--yellow)">💳 DBF</strong><br><small style="color:var(--muted)">Digital Banking & Fintech</small></td>
+          <td><span class="stars">★★★★★</span><br><small style="color:var(--muted)">الأصعب</small></td>
+          <td><span class="rank-badge" style="background:rgba(251,191,36,0.2);color:var(--yellow)">🚀 نامي</span></td>
+          <td><span class="rank-badge" style="background:rgba(34,211,160,0.2);color:var(--green)">💎 مستقبلي جداً</span></td>
+          <td><strong style="color:var(--yellow)">#1-2 مستقبلاً</strong></td>
+          <td>Blockchain, Crypto, Banks</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div style="margin-top:32px">
+    <div class="section-title" style="font-size:1.2rem; margin-bottom:16px">🎯 كل تخصص مناسب لأي نوع شغل تقني؟</div>
+    <div class="tip-grid">
+      <div class="tip-card">
+        <div class="icon">🌐</div>
+        <h4>Web Development</h4>
+        <p><span class="highlight">MIS الأول</span> عندك Web-Based Applications و Advanced E-Commerce.<br>ثانياً: MKI فيه Digital Marketing.<br>BA وDBF أقل تركيز على الـ web.</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">📱</div>
+        <h4>Mobile App Development</h4>
+        <p><span class="highlight">MIS الأول</span> عندك مادة Mobile Applications كاملة.<br>الباقي مفيهومش mobile بشكل مباشر.</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">🔐</div>
+        <h4>Cybersecurity</h4>
+        <p><span class="highlight">DBF الأول</span> عندك Cryptography, Data Security, Blockchain.<br>BA ثانياً عنده Data Security.<br>MIS فيه Data Security برضو.</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">🤖</div>
+        <h4>Artificial Intelligence</h4>
+        <p><span class="highlight">BA الأول</span> عندك Machine Learning + AI Intro + Big Data + Analytics.<br>MKI ثانياً عندك AI Intro.<br>DBF فيه Data Analytics بس مش متخصص في AI.</p>
+      </div>
+    </div>
+  </div>
+
+  <div style="margin-top:28px">
+    <div class="section-title" style="font-size:1.2rem; margin-bottom:16px">📊 ترتيب الرواتب في مصر (2024-2025)</div>
+    <div class="alert alert-blue">
+      <strong>1️⃣ BA / DBF:</strong> Data Analyst يبدأ من 15,000-25,000+ جنيه. Blockchain Developer عالمياً من أعلى الرواتب.<br>
+      <strong>2️⃣ MIS:</strong> Web Developer 10,000-20,000+ جنيه. IT Manager في شركات كبيرة أعلى.<br>
+      <strong>3️⃣ MKI:</strong> Digital Marketing Manager 8,000-18,000 جنيه. Freelancing ممكن يوصل أكتر بكتير.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 6.5: GPA CALCULATOR -->
+<!-- ══════════════════════════════════════════ -->
+<section id="gpa" class="fade-section">
+  <div class="divider" style="background:var(--blue2)"></div>
+  <div class="section-title">🧮 حاسبة الـ GPA</div>
+  <div class="section-sub">دخّل مواد الترم بتاعك (اسم المادة + عدد الساعات المعتمدة + التقدير) واحسب معدلك أوتوماتيك حسب نظام الكلية الرسمي</div>
+
+  <div class="gpa-wrap">
+    <div id="gpaRows"></div>
+
+    <div class="gpa-actions">
+      <button class="btn btn-add" onclick="addGpaRow()">➕ ضيف مادة</button>
+      <button class="btn btn-reset" onclick="resetGpaRows()">🔄 مسح الكل</button>
+    </div>
+
+    <div class="gpa-result">
+      <div>
+        <div class="gpa-num" id="gpaResult">0.00</div>
+        <div class="gpa-label">GPA الترم</div>
+      </div>
+      <div style="color:var(--muted); font-size:0.85rem; line-height:1.8; max-width:340px">
+        ⚠️ الحاسبة دي بتحسب معدل الترم بس (مش الـ CGPA التراكمي للأربع مستويات). المعادلة: مجموع (ساعات المادة × نقاط التقدير) ÷ إجمالي الساعات.
+      </div>
+    </div>
+
+    <table class="gpa-grade-table">
+      <thead>
+        <tr><th>التقدير</th><th>%</th><th>النقاط</th><th>التقدير</th><th>%</th><th>النقاط</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>A+</td><td>96-100</td><td>4.0</td><td>C+</td><td>72-<76</td><td>2.3</td></tr>
+        <tr><td>A</td><td>92-<96</td><td>3.8</td><td>C</td><td>68-<72</td><td>2.0</td></tr>
+        <tr><td>A-</td><td>88-<92</td><td>3.5</td><td>C-</td><td>64-<68</td><td>1.7</td></tr>
+        <tr><td>B+</td><td>84-<88</td><td>3.2</td><td>D+</td><td>60-<64</td><td>1.4</td></tr>
+        <tr><td>B</td><td>80-<84</td><td>2.9</td><td>D</td><td>56-<60</td><td>1.2</td></tr>
+        <tr><td>B-</td><td>76-<80</td><td>2.6</td><td>D-</td><td>50-<56</td><td>1.0</td></tr>
+        <tr><td colspan="4"></td><td>F</td><td>&lt;50</td><td>0.0</td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION: HOURS TO GRADUATE CALCULATOR -->
+<!-- ══════════════════════════════════════════ -->
+<section id="hours" class="fade-section">
+  <div class="divider" style="background:var(--orange)"></div>
+  <div class="section-title">⏳ كام ساعة باقيلي أتخرج؟</div>
+  <div class="section-sub">دخّل عدد الساعات المعتمدة اللي خلصتها وشوف إنت فين ومحتاج كام ترم</div>
+
+  <div class="hours-wrap">
+    <div class="hours-input-row">
+      <div class="field-group">
+        <label>عدد الساعات المعتمدة اللي خلصتها</label>
+        <input type="number" id="hoursCompleted" min="0" max="140" value="0" oninput="calcHours()">
+      </div>
+      <div class="field-group">
+        <label>متوسط الساعات اللي بتاخدها كل ترم</label>
+        <select id="hoursPerSem" onchange="calcHours()">
+          <option value="15">15 ساعة (بطيء)</option>
+          <option value="17" selected>17 ساعة (عادي)</option>
+          <option value="19">19 ساعة (سريع)</option>
+        </select>
+      </div>
+      <div class="field-group">
+        <label>بتاخد صيفي؟</label>
+        <select id="hoursSummer" onchange="calcHours()">
+          <option value="0">لأ</option>
+          <option value="9">أيوه (9 ساعات كل صيف)</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="level-track">
+      <div class="level-seg"><div class="level-seg-fill" id="levelFill" style="width:0%"></div></div>
+    </div>
+    <div class="level-labels">
+      <span>0</span><span>34</span><span>72</span><span>108</span><span>140</span>
+    </div>
+
+    <div class="hours-stats">
+      <div class="hstat">
+        <div class="num" id="hCurrentLevel" style="color:var(--blue2)">1</div>
+        <div class="lbl">المستوى الحالي</div>
+      </div>
+      <div class="hstat">
+        <div class="num" id="hRemaining" style="color:var(--orange)">140</div>
+        <div class="lbl">ساعة متبقية</div>
+      </div>
+      <div class="hstat">
+        <div class="num" id="hPercent" style="color:var(--green)">0%</div>
+        <div class="lbl">نسبة الإنجاز</div>
+      </div>
+      <div class="hstat">
+        <div class="num" id="hSemesters" style="color:var(--purple)">0</div>
+        <div class="lbl">ترم متبقي (تقريباً)</div>
+      </div>
+    </div>
+
+    <div class="alert alert-blue" style="margin-top:20px">
+      💡 الحساب تقريبي ومبني على متوسط ثابت للساعات كل ترم. لو أخدت مواد متغيرة كل ترم، النتيجة ممكن تختلف شوية.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION: INTERACTIVE CHECKLIST -->
+<!-- ══════════════════════════════════════════ -->
+<section id="checklist" class="fade-section">
+  <div class="divider" style="background:var(--purple)"></div>
+  <div class="section-title">✅ Checklist المواد – تابع تقدمك</div>
+  <div class="section-sub">اختار تخصصك وحدد المواد اللي خلصتها. البيانات بتتحفظ تلقائياً في المتصفح بتاعك</div>
+
+  <div class="checklist-wrap">
+    <div class="checklist-tabs" id="clTabs"></div>
+    <div class="cl-progress-bar"><div class="cl-progress-fill" id="clProgressFill" style="width:0%"></div></div>
+    <div class="cl-progress-text">
+      <span>خلصت <strong id="clDoneCredits">0</strong> من <strong id="clTotalCredits">0</strong> ساعة</span>
+      <strong id="clPercentText">0%</strong>
+    </div>
+    <div id="clList"></div>
+
+    <div class="alert alert-blue" style="margin-top:16px">
+      💡 المواد الأساسية معروضة بأسمائها الكاملة زي الجدول الرسمي. المواد الاختيارية (Elective) معروضة كمجموعة اختيارات — اختار المادة اللي فعلاً درستها من كل مجموعة.
+    </div>
+    <div class="alert alert-orange" style="margin-top:10px">
+      ⚠️ بعض تفاصيل المتطلبات السابقة (Prerequisites) والتوزيع الدقيق للساعات بين الجداول ممكن يكون فيه اختلاف بسيط بسبب جودة الملف الأصلي (PDF) — راجع مرشدك الأكاديمي أو الجدول الرسمي لأي تفصيلة حرجة.
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════ -->
+<!-- SECTION 7: اختار تخصصك -->
+<!-- ══════════════════════════════════════════ -->
+<section id="choose" class="fade-section">
+  <div class="divider" style="background:var(--orange)"></div>
+  <div class="section-title">🧭 إزاي تختار تخصصك؟</div>
+  <div class="section-sub">اسأل نفسك الأسئلة دي وهتلاقي إجابتك</div>
+
+  <div class="choose-grid">
+    <div class="choose-card" style="border-color:rgba(14,165,233,0.3)">
+      <div class="arrow">📊</div>
+      <h4 style="color:var(--blue)">اختار BA لو…</h4>
+      <p>بتحب الأرقام والإحصاء، مش خايف من Python وSQL، عايز تشتغل في Data Science ومستعد لصعوبة أكاديمية عالية مقابل راتب أعلى.</p>
+    </div>
+    <div class="choose-card" style="border-color:rgba(34,211,160,0.3)">
+      <div class="arrow">🖥️</div>
+      <h4 style="color:var(--green)">اختار MIS لو…</h4>
+      <p>بتحب تعمل مواقع وتطبيقات، عايز تدخل سوق الشغل بسرعة، بتحب تكون between التقنية والإدارة، وعايز مرونة في فرص الشغل.</p>
+    </div>
+    <div class="choose-card" style="border-color:rgba(244,114,182,0.3)">
+      <div class="arrow">📣</div>
+      <h4 style="color:var(--pink)">اختار MKI لو…</h4>
+      <p>شغوف بالتسويق الرقمي والـ Social Media، عندك حس إبداعي، مش بتحب الكود الكتير، وعايز تشتغل في مجال الـ E-Commerce والبراندات.</p>
+    </div>
+    <div class="choose-card" style="border-color:rgba(251,191,36,0.3)">
+      <div class="arrow">💳</div>
+      <h4 style="color:var(--yellow)">اختار DBF لو…</h4>
+      <p>مفتون بالـ Blockchain والـ Crypto والمال الرقمي، مستعد تذاكر بجد، وعايز تركب موجة الـ Fintech اللي ماشية تصعد في مصر والعالم.</p>
+    </div>
+  </div>
+
+  <div style="margin-top:32px">
+    <div class="alert alert-blue">
+      <strong>💡 نصيحة مهمة:</strong> في الـ Level 1 و2 كل التخصصات بياخدوا نفس المواد تقريباً في BT. استغل الوقت ده تتعلم برمجة بالإضافة للكورسات وحاول تعمل مشاريع صغيرة – ده اللي هيميزك عن أي حد تاني بغض النظر عن التخصص.
+    </div>
+    <div class="alert alert-green" style="margin-top:12px">
+      <strong>🎯 أهم كلمة:</strong> التخصص مش بيحدد كل حياتك المهنية. الـ BA ممكن يتعلم Marketing، والـ MIS ممكن يتعلم Data Science. اللي بيفرق فعلاً هو المشاريع والـ Portfolio اللي بتعملها جنب الكلية.
+    </div>
+  </div>
+
+  <div style="margin-top:32px">
+    <div class="section-title" style="font-size:1.2rem; margin-bottom:16px">⚡ ملخص سريع – ترتيب التخصصات</div>
+    <div class="tip-grid">
+      <div class="tip-card">
+        <div class="icon">💼</div>
+        <h4>فرص الشغل دلوقتي</h4>
+        <p><span class="highlight">#1 MIS</span> → فرص أكتر وأسرع<br><span class="highlight">#2 BA</span> → طلب عالي جداً<br><span class="highlight">#3 MKI</span> → سوق تنافسي<br><span class="highlight">#4 DBF</span> → نامي ومستقبلي</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">🎓</div>
+        <h4>الأسهل أكاديمياً</h4>
+        <p><span class="highlight">#1 MKI</span> → الأسهل<br><span class="highlight">#2 MIS</span> → متوسط<br><span class="highlight">#3 BA</span> → صعب<br><span class="highlight">#4 DBF</span> → الأصعب</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">🚀</div>
+        <h4>المستقبل (5 سنين)</h4>
+        <p><span class="highlight">#1 BA</span> → AI & Data يطلع<br><span class="highlight">#2 DBF</span> → Fintech ينمو<br><span class="highlight">#3 MIS</span> → ثابت وكويس<br><span class="highlight">#4 MKI</span> → تنافسي أكتر</p>
+      </div>
+      <div class="tip-card">
+        <div class="icon">💰</div>
+        <h4>الراتب مستقبلاً</h4>
+        <p><span class="highlight">#1 BA/DBF</span> → الأعلى<br><span class="highlight">#2 MIS</span> → كويس جداً<br><span class="highlight">#3 MKI</span> → متوسط-كويس<br>(Freelance يغير كل الحسابات!)</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</div><!-- /container -->
+
+<footer>
+  <div class="container">
+    <p>📚 دليل مبني على دليل الطالب الرسمي لكلية الإدارة والاقتصاد وتكنولوجيا الأعمال – الجامعة المصرية الروسية 2023</p>
+    <p style="margin-top:8px; opacity:0.5">اتعمل خصيصاً لطلاب BT – ERU</p>
+  </div>
+</footer>
+
+<script>
+  // Intersection Observer for fade-in
+  const sections = document.querySelectorAll('.fade-section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.08 });
+  sections.forEach(s => observer.observe(s));
+
+  // Active nav
+  const navLinks = document.querySelectorAll('.nav-tabs a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    document.querySelectorAll('section[id]').forEach(sec => {
+      if(window.scrollY >= sec.offsetTop - 140) current = sec.id;
+    });
+    navLinks.forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#'+current);
+    });
+  });
+
+  // ── GPA CALCULATOR ──
+  const gradePoints = {
+    'A+': 4.0, 'A': 3.8, 'A-': 3.5, 'B+': 3.2, 'B': 2.9, 'B-': 2.6,
+    'C+': 2.3, 'C': 2.0, 'C-': 1.7, 'D+': 1.4, 'D': 1.2, 'D-': 1.0, 'F': 0.0
+  };
+  let gpaRowCount = 0;
+
+  function addGpaRow(name='', credit=3, grade='A') {
+    gpaRowCount++;
+    const wrap = document.getElementById('gpaRows');
+    const row = document.createElement('div');
+    row.className = 'gpa-row';
+    row.id = 'gpaRow-' + gpaRowCount;
+    row.innerHTML = `
+      <input type="text" placeholder="اسم المادة (مثلاً: Data Structures)" value="${name}" oninput="calcGpa()">
+      <input type="number" min="1" max="6" value="${credit}" oninput="calcGpa()" title="عدد الساعات المعتمدة">
+      <select onchange="calcGpa()">
+        ${Object.keys(gradePoints).map(g => `<option value="${g}" ${g===grade?'selected':''}>${g}</option>`).join('')}
+      </select>
+      <button class="del-btn" onclick="removeGpaRow(${gpaRowCount})" title="حذف">✕</button>
+    `;
+    wrap.appendChild(row);
+    calcGpa();
+  }
+
+  function removeGpaRow(id) {
+    const row = document.getElementById('gpaRow-' + id);
+    if (row) row.remove();
+    calcGpa();
+  }
+
+  function resetGpaRows() {
+    document.getElementById('gpaRows').innerHTML = '';
+    gpaRowCount = 0;
+    addGpaRow();
+    addGpaRow();
+    addGpaRow();
+  }
+
+  function calcGpa() {
+    const rows = document.querySelectorAll('#gpaRows .gpa-row');
+    let totalPoints = 0, totalCredits = 0;
+    rows.forEach(row => {
+      const credit = parseFloat(row.querySelector('input[type=number]').value) || 0;
+      const grade = row.querySelector('select').value;
+      const points = gradePoints[grade] ?? 0;
+      totalPoints += credit * points;
+      totalCredits += credit;
+    });
+    const gpa = totalCredits > 0 ? (totalPoints / totalCredits) : 0;
+    document.getElementById('gpaResult').textContent = gpa.toFixed(2);
+  }
+
+  // init with 3 empty rows
+  resetGpaRows();
+
+  // ── HOURS TO GRADUATE CALCULATOR ──
+  function calcHours() {
+    const completed = Math.max(0, Math.min(140, parseFloat(document.getElementById('hoursCompleted').value) || 0));
+    const perSem = parseFloat(document.getElementById('hoursPerSem').value) || 17;
+    const summer = parseFloat(document.getElementById('hoursSummer').value) || 0;
+
+    const remaining = Math.max(0, 140 - completed);
+    const percent = Math.round((completed / 140) * 100);
+
+    let level = 1;
+    if (completed >= 108) level = 4;
+    else if (completed >= 72) level = 3;
+    else if (completed >= 34) level = 2;
+
+    // estimate semesters remaining (2 regular semesters/year + optional summer)
+    const yearlyRate = (perSem * 2) + summer;
+    const semestersRegular = perSem > 0 ? Math.ceil(remaining / perSem) : 0;
+
+    document.getElementById('levelFill').style.width = percent + '%';
+    document.getElementById('hCurrentLevel').textContent = level;
+    document.getElementById('hRemaining').textContent = remaining;
+    document.getElementById('hPercent').textContent = percent + '%';
+    document.getElementById('hSemesters').textContent = semestersRegular;
+  }
+  calcHours();
+
+  // ── INTERACTIVE CHECKLIST ──
+  const clData = {
+    common: {
+      label: '📘 مشترك (Level 1-2)',
+      levels: {
+        'Level 1': [
+          {type:'course', c:'ECO101', n:'Introduction to Microeconomics', cr:3},
+          {type:'course', c:'MTH103', n:'Mathematics', cr:3},
+          {type:'course', c:'MGT101', n:'Introduction to Management', cr:3},
+          {type:'course', c:'IST103', n:'Fundamentals of Information Systems', cr:3},
+          {type:'course', c:'COS101', n:'Introduction to Computer Science', cr:3},
+          {type:'course', c:'HM003', n:'English Language 1', cr:2},
+          {type:'course', c:'ECO102', n:'Introduction to Macroeconomics', cr:3},
+          {type:'course', c:'ACC125', n:'Financial Accounting', cr:3},
+          {type:'course', c:'COS102', n:'Introduction to Programming', cr:3},
+          {type:'course', c:'IST104', n:'System Analysis and Design 1', cr:3},
+          {type:'course', c:'STA103', n:'Statistics and Probability 1', cr:3},
+          {type:'course', c:'HM004', n:'English Language 2', cr:2},
+        ],
+        'Level 2': [
+          {type:'course', c:'IST205', n:'Database Systems 1', cr:3},
+          {type:'course', c:'STA204', n:'Statistics and Probability 2', cr:3},
+          {type:'course', c:'HM006', n:'Human Rights & Anti-corruption', cr:2},
+          {type:'course', c:'ECO203', n:'Money & Banking', cr:3},
+          {type:'course', c:'IST206', n:'System Analysis and Design 2', cr:3},
+          {type:'course', c:'COS203', n:'Object Oriented Programming', cr:3},
+          {type:'course', c:'HM001', n:'Russian Language 1', cr:2},
+          {type:'course', c:'ACC226', n:'Fundamentals of Managerial Accounting', cr:3},
+          {type:'course', c:'BUA201', n:'Introduction to Business Analytics', cr:3},
+          {type:'course', c:'IST207', n:'Database System 2', cr:3},
+          {type:'course', c:'FIN201', n:'Principles of Finance and Investment', cr:3},
+          {type:'course', c:'HM005', n:'Scientific Thinking', cr:2},
+          {type:'course', c:'MGT102', n:'Introduction to Marketing', cr:3},
+          {type:'course', c:'HM002', n:'Russian Language 2', cr:2},
+        ]
+      }
+    },
+
+    BA: {
+      label: '📊 Business Analytics',
+      levels: {
+        'Level 3': [
+          {type:'course', c:'COS304', n:'Data Structures', cr:3},
+          {type:'course', c:'STA305', n:'Statistical Computing', cr:3},
+          {type:'course', c:'COS305', n:'Operating Systems', cr:3},
+          {type:'course', c:'MIS301', n:'Digital Marketing and Social Media', cr:3},
+          {type:'course', c:'BUA308', n:'Data Analysis for Business Applications', cr:3},
+          {type:'course', c:'DAS305', n:'Data Warehouse', cr:3},
+          {type:'course', c:'ARI301', n:'Introduction to Artificial Intelligence', cr:3},
+          {type:'course', c:'BUA303', n:'Business Intelligence', cr:3},
+          {type:'course', c:'BUA304', n:'Predictive Analytics', cr:3},
+          {type:'elective', id:'BA-E1', label:'Elective 1', cr:3, options:[
+            {c:'BIT303', n:'Networking & Telecommunications'},
+          ]},
+          {type:'elective', id:'BA-E2', label:'Elective 2', cr:3, options:[
+            {c:'ECO414', n:'Econometrics for Time Series'},
+            {c:'STA306', n:'Operations Research'},
+            {c:'BUA302', n:'Marketing Analytics'},
+            {c:'BUA306', n:'Supply Chain Analytics'},
+            {c:'BUA307', n:'Special Topics in Business Analytics'},
+          ]},
+        ],
+        'Level 4': [
+          {type:'course', c:'HM009', n:'Scientific Research Methodology', cr:2},
+          {type:'course', c:'DAS409', n:'Data Mining', cr:3},
+          {type:'course', c:'BUA305', n:'Prescriptive Analytics', cr:3},
+          {type:'course', c:'BUA422', n:'Graduation Project 1', cr:3},
+          {type:'elective', id:'BA-E3', label:'Elective 3', cr:3, options:[
+            {c:'ECO424', n:'Business Data Forecasting'},
+            {c:'STA407', n:'Qualitative & Quantitative Analysis'},
+          ]},
+          {type:'elective', id:'BA-E4', label:'Elective 4', cr:3, options:[
+            {c:'MGT416', n:'Strategic Management'},
+            {c:'FIN410', n:'Investment Portfolio Management'},
+            {c:'MIS409', n:'Project Management'},
+          ]},
+          {type:'course', c:'BIT406', n:'Data Security', cr:3},
+          {type:'course', c:'DAS410', n:'Foundation of Big Data', cr:3},
+          {type:'course', c:'BUA425', n:'Graduation Project 2', cr:3},
+          {type:'elective', id:'BA-E5', label:'Elective 5', cr:3, options:[
+            {c:'ARI413', n:'Machine Learning'},
+            {c:'MIS304', n:'Financial Information Systems'},
+            {c:'IST311', n:'Web Based Applications'},
+          ]},
+          {type:'elective', id:'BA-E6', label:'Elective 6', cr:3, options:[
+            {c:'IST312', n:'Online Analytical Processing'},
+            {c:'IST309', n:'Information Retrieval and Web Search'},
+          ]},
+        ]
+      }
+    },
+
+    MIS: {
+      label: '🖥️ Management Information Systems',
+      levels: {
+        'Level 3': [
+          {type:'course', c:'COS304', n:'Data Structures', cr:3},
+          {type:'course', c:'STA305', n:'Statistical Computing', cr:3},
+          {type:'course', c:'COS305', n:'Operating Systems', cr:3},
+          {type:'course', c:'MIS301', n:'Digital Marketing and Social Media', cr:3},
+          {type:'course', c:'MGT306', n:'Production & Operations Management', cr:3},
+          {type:'course', c:'MIS302', n:'Fundamentals of E-commerce', cr:3},
+          {type:'course', c:'FIN410', n:'Investment Portfolio Management', cr:3},
+          {type:'course', c:'MGT203', n:'Introduction to Human Resource Management', cr:3},
+          {type:'course', c:'MIS303', n:'Advanced Topics in Information Systems', cr:3},
+          {type:'elective', id:'MIS-E1', label:'Elective 1', cr:3, options:[
+            {c:'IST311', n:'Web Based Applications'},
+          ]},
+          {type:'elective', id:'MIS-E2', label:'Elective 2', cr:3, options:[
+            {c:'BUA302', n:'Marketing Analytics'},
+            {c:'ECO327', n:'Foreign Trade'},
+            {c:'POL203', n:'Principles of International Relations'},
+            {c:'STA306', n:'Operations Research'},
+            {c:'MIS305', n:'Multimedia'},
+          ]},
+        ],
+        'Level 4': [
+          {type:'course', c:'HM009', n:'Scientific Research Methodology', cr:2},
+          {type:'course', c:'IST414', n:'Mobile Applications', cr:3},
+          {type:'course', c:'BIT406', n:'Data Security', cr:3},
+          {type:'course', c:'MIS422', n:'Graduation Project 1', cr:3},
+          {type:'elective', id:'MIS-E3', label:'Elective 3', cr:3, options:[
+            {c:'MGT427', n:'Creative Thinking'},
+            {c:'ECO305', n:'Economics of Public Finance'},
+            {c:'BUA306', n:'Supply Chain Analytics'},
+          ]},
+          {type:'elective', id:'MIS-E4', label:'Elective 4', cr:3, options:[
+            {c:'COS310', n:'Software Engineering'},
+            {c:'MIS409', n:'Project Management'},
+            {c:'MIS406', n:'Contemporary Issues in Information Technology'},
+          ]},
+          {type:'course', c:'BIT303', n:'Networking and Telecommunications', cr:3},
+          {type:'course', c:'BUA303', n:'Business Intelligence', cr:3},
+          {type:'course', c:'MIS425', n:'Graduation Project 2', cr:3},
+          {type:'elective', id:'MIS-E5', label:'Elective 5', cr:3, options:[
+            {c:'MGT416', n:'Strategic Management'},
+            {c:'MGT428', n:'Communication Skills'},
+          ]},
+          {type:'elective', id:'MIS-E6', label:'Elective 6', cr:3, options:[
+            {c:'MIS407', n:'Advanced E-commerce'},
+            {c:'MIS408', n:'Accounting Information Systems'},
+            {c:'MIS304', n:'Financial Information Systems'},
+          ]},
+        ]
+      }
+    },
+
+    MKI: {
+      label: '📣 Marketing Intelligence',
+      levels: {
+        'Level 3': [
+          {type:'course', c:'COS304', n:'Data Structures', cr:3},
+          {type:'course', c:'STA305', n:'Statistical Computing', cr:3},
+          {type:'course', c:'COS305', n:'Operating Systems', cr:3},
+          {type:'course', c:'MIS301', n:'Digital Marketing and Social Media', cr:3},
+          {type:'course', c:'MGT306', n:'Production & Operation Management', cr:3},
+          {type:'course', c:'ARI301', n:'Introduction to Artificial Intelligence', cr:3},
+          {type:'course', c:'BIT303', n:'Networking and Telecommunications', cr:3},
+          {type:'course', c:'MKI301', n:'Introduction to Marketing Intelligence', cr:3},
+          {type:'course', c:'MIS303', n:'Advanced Topics in Information Systems', cr:3},
+          {type:'elective', id:'MKI-E1', label:'Elective 1', cr:3, options:[
+            {c:'BUA302', n:'Marketing Analytics'},
+            {c:'BUA306', n:'Supply Chain Analytics'},
+            {c:'BUA304', n:'Predictive Analytics'},
+            {c:'ECO327', n:'Foreign Trade'},
+          ]},
+          {type:'elective', id:'MKI-E2', label:'Elective 2', cr:3, options:[
+            {c:'STA306', n:'Operations Research'},
+            {c:'MIS305', n:'Multimedia'},
+          ]},
+        ],
+        'Level 4': [
+          {type:'course', c:'HM009', n:'Scientific Research Methodology', cr:2},
+          {type:'course', c:'MKT401', n:'Marketing Research', cr:3},
+          {type:'course', c:'MKT404', n:'E-Marketing', cr:3},
+          {type:'course', c:'MKI401', n:'Graduation Project 1', cr:3},
+          {type:'elective', id:'MKI-E3', label:'Elective 3', cr:3, options:[
+            {c:'MKT402', n:'Consumer Behavior'},
+            {c:'MGT413', n:'Public Relations'},
+            {c:'MGT427', n:'Creative Thinking'},
+          ]},
+          {type:'elective', id:'MKI-E4', label:'Elective 4', cr:3, options:[
+            {c:'MKT405', n:'New Product Planning'},
+            {c:'MKT403', n:'Integrated Marketing Communications'},
+            {c:'MIS409', n:'Project Management'},
+          ]},
+          {type:'course', c:'MKT406', n:'Brand Management', cr:3},
+          {type:'course', c:'MKI403', n:'Customer Analytics', cr:3},
+          {type:'course', c:'MKI402', n:'Graduation Project 2', cr:3},
+          {type:'elective', id:'MKI-E5', label:'Elective 5', cr:3, options:[
+            {c:'MKT407', n:'Marketing Strategy'},
+            {c:'MGT428', n:'Communication Skills'},
+          ]},
+          {type:'elective', id:'MKI-E6', label:'Elective 6', cr:3, options:[
+            {c:'MKI404', n:'Customer Relationship Management'},
+            {c:'MKT408', n:'International Marketing'},
+            {c:'MKT409', n:'Industrial Marketing Management'},
+          ]},
+        ]
+      }
+    },
+
+    DBF: {
+      label: '💳 Digital Banking & Fintech',
+      levels: {
+        'Level 3': [
+          {type:'course', c:'COS304', n:'Data Structures', cr:3},
+          {type:'course', c:'STA305', n:'Statistical Computing', cr:3},
+          {type:'course', c:'COS305', n:'Operating Systems', cr:3},
+          {type:'course', c:'MIS301', n:'Digital Marketing and Social Media', cr:3},
+          {type:'course', c:'ECO427', n:'International Finance and Banking', cr:3},
+          {type:'course', c:'BIT406', n:'Data Security', cr:3},
+          {type:'course', c:'DBF301', n:'Principles of Digital Banking and Fintech', cr:3},
+          {type:'course', c:'DBF302', n:'Valuation of Companies and Cash Flow Generating Assets', cr:3},
+          {type:'course', c:'ECO310', n:'Econometrics', cr:3},
+          {type:'elective', id:'DBF-E1', label:'Elective 1', cr:3, options:[
+            {c:'COS320', n:'Distributed Systems'},
+            {c:'MGT307', n:'Business Ethics and Corporate Social Responsibility'},
+            {c:'MGT305', n:'Entrepreneurship and Small Enterprises Management'},
+            {c:'ECO331', n:'Investment Theory and Practice'},
+          ]},
+          {type:'elective', id:'DBF-E2', label:'Elective 2', cr:3, options:[
+            {c:'BIT303', n:'Networking & Telecommunications'},
+            {c:'COS310', n:'Software Engineering'},
+            {c:'MIS303', n:'Advanced Topics in Information Systems'},
+          ]},
+        ],
+        'Level 4': [
+          {type:'course', c:'HM009', n:'Scientific Research Methodology', cr:2},
+          {type:'course', c:'MIS304', n:'Financial Information System', cr:3},
+          {type:'course', c:'COS421', n:'Cryptography Fundamentals', cr:3},
+          {type:'course', c:'ECO414', n:'Econometrics for Time Series', cr:3},
+          {type:'course', c:'DBF403', n:'Graduation Project 1', cr:3},
+          {type:'course', c:'ECO415', n:'International Monetary and Financial Systems', cr:3},
+          {type:'elective', id:'DBF-E3', label:'Elective 3', cr:3, options:[
+            {c:'DBF404', n:'Data Analytics for Accounting and Finance'},
+            {c:'DBF405', n:'Trading Strategies'},
+            {c:'FIN409', n:'Banking Management'},
+          ]},
+          {type:'course', c:'COS422', n:'Blockchain and Crypto Assets', cr:3},
+          {type:'course', c:'DBF406', n:'Financial Derivatives', cr:3},
+          {type:'course', c:'DBF407', n:'Graduation Project 2', cr:3},
+          {type:'elective', id:'DBF-E4', label:'Elective 4', cr:3, options:[
+            {c:'FIN314', n:'Financial Risk Management'},
+            {c:'ECO424', n:'Business Data Forecasting'},
+            {c:'DBF408', n:'Alternative Investment Funds'},
+          ]},
+          {type:'elective', id:'DBF-E5', label:'Elective 5', cr:3, options:[
+            {c:'COS423', n:'Blockchain Application'},
+            {c:'COS424', n:'Database Security'},
+            {c:'COS425', n:'Distributed Computing'},
+          ]},
+        ]
+      }
+    }
+  };
+
+  let clCurrentTrack = 'BA';
+  const CL_STORAGE_KEY = 'eru_bt_checklist_v2';
+
+  function loadClState() {
+    try { return JSON.parse(localStorage.getItem(CL_STORAGE_KEY)) || {}; }
+    catch(e) { return {}; }
+  }
+  function saveClState(state) {
+    try { localStorage.setItem(CL_STORAGE_KEY, JSON.stringify(state)); } catch(e) {}
+  }
+
+  function renderClTabs() {
+    const tabsWrap = document.getElementById('clTabs');
+    tabsWrap.innerHTML = '';
+    ['BA','MIS','MKI','DBF'].forEach(key => {
+      const tab = document.createElement('div');
+      tab.className = 'cl-tab' + (key === clCurrentTrack ? ' active' : '');
+      tab.textContent = clData[key].label;
+      tab.onclick = () => { clCurrentTrack = key; renderClTabs(); renderClList(); };
+      tabsWrap.appendChild(tab);
+    });
+  }
+
+  function renderClList() {
+    const listWrap = document.getElementById('clList');
+    listWrap.innerHTML = '';
+    const state = loadClState();
+    const track = clData[clCurrentTrack];
+
+    const allGroups = [
+      ['Level 1', clData.common.levels['Level 1']],
+      ['Level 2', clData.common.levels['Level 2']],
+      ['Level 3', track.levels['Level 3']],
+      ['Level 4', track.levels['Level 4']],
+    ];
+
+    allGroups.forEach(([levelName, items]) => {
+      const title = document.createElement('div');
+      title.className = 'cl-level-title';
+      title.textContent = levelName;
+      listWrap.appendChild(title);
+
+      items.forEach(item => {
+        if (item.type === 'course') {
+          const stateKey = clCurrentTrack + '::' + item.c;
+          const checked = !!state[stateKey];
+
+          const row = document.createElement('div');
+          row.className = 'cl-item';
+          row.innerHTML = `
+            <input type="checkbox" ${checked ? 'checked' : ''}>
+            <span class="cl-name ${checked ? 'done' : ''}">${item.n}</span>
+            <span class="cl-credit">${item.cr} ساعة</span>
+          `;
+          const checkbox = row.querySelector('input');
+          checkbox.addEventListener('change', () => {
+            const st = loadClState();
+            st[stateKey] = checkbox.checked;
+            saveClState(st);
+            row.querySelector('.cl-name').classList.toggle('done', checkbox.checked);
+            updateClProgress();
+          });
+          listWrap.appendChild(row);
+
+        } else if (item.type === 'elective') {
+          const groupKey = clCurrentTrack + '::' + item.id;
+          const selectedVal = state[groupKey] || '';
+
+          const box = document.createElement('div');
+          box.style.cssText = 'background:rgba(167,139,250,0.05); border:1px dashed rgba(167,139,250,0.3); border-radius:10px; padding:10px 12px; margin-bottom:6px;';
+          box.innerHTML = `<div style="font-size:0.78rem; font-weight:700; color:var(--purple); margin-bottom:6px;">🔀 ${item.label} — اختر مادة واحدة (${item.cr} ساعة)</div>`;
+
+          item.options.forEach(opt => {
+            const radioRow = document.createElement('label');
+            radioRow.className = 'cl-item';
+            radioRow.style.padding = '6px 8px';
+            radioRow.innerHTML = `
+              <input type="radio" name="${groupKey}" value="${opt.c}" ${selectedVal===opt.c ? 'checked':''} style="accent-color:var(--purple)">
+              <span class="cl-name ${selectedVal===opt.c ? 'done':''}">${opt.n}</span>
+            `;
+            const radio = radioRow.querySelector('input');
+            radio.addEventListener('change', () => {
+              const st = loadClState();
+              st[groupKey] = opt.c;
+              saveClState(st);
+              renderClList();
+            });
+            box.appendChild(radioRow);
+          });
+
+          // option to clear selection
+          if (selectedVal) {
+            const clearBtn = document.createElement('div');
+            clearBtn.style.cssText = 'font-size:0.72rem; color:var(--muted); cursor:pointer; padding:4px 8px;';
+            clearBtn.textContent = '✕ إلغاء الاختيار';
+            clearBtn.onclick = () => {
+              const st = loadClState();
+              delete st[groupKey];
+              saveClState(st);
+              renderClList();
+            };
+            box.appendChild(clearBtn);
+          }
+
+          listWrap.appendChild(box);
+        }
+      });
+    });
+
+    updateClProgress();
+  }
+
+  function updateClProgress() {
+    const state = loadClState();
+    const track = clData[clCurrentTrack];
+    const allItems = [
+      ...clData.common.levels['Level 1'],
+      ...clData.common.levels['Level 2'],
+      ...track.levels['Level 3'],
+      ...track.levels['Level 4'],
+    ];
+    let total = 0, done = 0;
+    allItems.forEach(item => {
+      total += item.cr;
+      if (item.type === 'course') {
+        const stateKey = clCurrentTrack + '::' + item.c;
+        if (state[stateKey]) done += item.cr;
+      } else if (item.type === 'elective') {
+        const groupKey = clCurrentTrack + '::' + item.id;
+        if (state[groupKey]) done += item.cr;
+      }
+    });
+    const pct = total > 0 ? Math.round((done/total)*100) : 0;
+    document.getElementById('clProgressFill').style.width = pct + '%';
+    document.getElementById('clDoneCredits').textContent = done;
+    document.getElementById('clTotalCredits').textContent = total;
+    document.getElementById('clPercentText').textContent = pct + '%';
+  }
+
+  renderClTabs();
+  renderClList();
+
+  // Animate bars on scroll
+  const bars = document.querySelectorAll('.bar-fill');
+  const barObs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if(e.isIntersecting) { e.target.style.width = e.target.style.width; }
+    });
+  }, { threshold: 0.5 });
+  bars.forEach(b => { const w = b.style.width; b.style.width='0'; setTimeout(()=>{ b.style.width=w; },200); barObs.observe(b); });
+</script>
+</body>
+</html>
