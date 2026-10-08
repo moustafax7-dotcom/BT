@@ -1,4 +1,4 @@
-  // Intersection Observer for fade-in
+// Intersection Observer for fade-in
   const sections = document.querySelectorAll('.fade-section');
   const observer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
@@ -236,6 +236,8 @@
           {type:'elective', id:'BA-E2', label:'Elective 2', cr:3, options:[
             {c:'ECO414', n:'Econometrics for Time Series'},
             {c:'STA306', n:'Operations Research'},
+          ]},
+          {type:'elective', id:'BA-E2b', label:'Elective 3', cr:3, options:[
             {c:'BUA302', n:'Marketing Analytics'},
             {c:'BUA306', n:'Supply Chain Analytics'},
             {c:'BUA307', n:'Special Topics in Business Analytics'},
@@ -246,11 +248,11 @@
           {type:'course', c:'DAS409', n:'Data Mining', cr:3},
           {type:'course', c:'BUA305', n:'Prescriptive Analytics', cr:3},
           {type:'course', c:'BUA422', n:'Graduation Project 1', cr:3},
-          {type:'elective', id:'BA-E3', label:'Elective 3', cr:3, options:[
+          {type:'elective', id:'BA-E3', label:'Elective 4', cr:3, options:[
             {c:'ECO424', n:'Business Data Forecasting'},
             {c:'STA407', n:'Qualitative & Quantitative Analysis'},
           ]},
-          {type:'elective', id:'BA-E4', label:'Elective 4', cr:3, options:[
+          {type:'elective', id:'BA-E4', label:'Elective 5', cr:3, options:[
             {c:'MGT416', n:'Strategic Management'},
             {c:'FIN410', n:'Investment Portfolio Management'},
             {c:'MIS409', n:'Project Management'},
@@ -260,12 +262,12 @@
           {type:'course', c:'BIT406', n:'Data Security', cr:3},
           {type:'course', c:'DAS410', n:'Foundation of Big Data', cr:3},
           {type:'course', c:'BUA425', n:'Graduation Project 2', cr:3},
-          {type:'elective', id:'BA-E5', label:'Elective 5', cr:3, options:[
+          {type:'elective', id:'BA-E5', label:'Elective 6', cr:3, options:[
             {c:'ARI413', n:'Machine Learning'},
             {c:'MIS304', n:'Financial Information Systems'},
             {c:'IST311', n:'Web Based Applications'},
           ]},
-          {type:'elective', id:'BA-E6', label:'Elective 6', cr:3, options:[
+          {type:'elective', id:'BA-E6', label:'Elective 7', cr:3, options:[
             {c:'IST312', n:'Online Analytical Processing'},
             {c:'IST309', n:'Information Retrieval and Web Search'},
           ]},
@@ -295,6 +297,8 @@
             {c:'BUA302', n:'Marketing Analytics'},
             {c:'ECO327', n:'Foreign Trade'},
             {c:'POL203', n:'Principles of International Relations'},
+          ]},
+          {type:'elective', id:'MIS-E2b', label:'Elective 3', cr:3, options:[
             {c:'STA306', n:'Operations Research'},
             {c:'MIS305', n:'Multimedia'},
           ]},
@@ -304,12 +308,12 @@
           {type:'course', c:'IST414', n:'Mobile Applications', cr:3},
           {type:'course', c:'BIT406', n:'Data Security', cr:3},
           {type:'course', c:'MIS422', n:'Graduation Project 1', cr:3},
-          {type:'elective', id:'MIS-E3', label:'Elective 3', cr:3, options:[
+          {type:'elective', id:'MIS-E3', label:'Elective 4', cr:3, options:[
             {c:'MGT427', n:'Creative Thinking'},
             {c:'ECO305', n:'Economics of Public Finance'},
             {c:'BUA306', n:'Supply Chain Analytics'},
           ]},
-          {type:'elective', id:'MIS-E4', label:'Elective 4', cr:3, options:[
+          {type:'elective', id:'MIS-E4', label:'Elective 5', cr:3, options:[
             {c:'COS310', n:'Software Engineering'},
             {c:'MIS409', n:'Project Management'},
             {c:'MIS406', n:'Contemporary Issues in Information Technology'},
@@ -319,11 +323,11 @@
           {type:'course', c:'BIT303', n:'Networking and Telecommunications', cr:3},
           {type:'course', c:'BUA303', n:'Business Intelligence', cr:3},
           {type:'course', c:'MIS425', n:'Graduation Project 2', cr:3},
-          {type:'elective', id:'MIS-E5', label:'Elective 5', cr:3, options:[
+          {type:'elective', id:'MIS-E5', label:'Elective 6', cr:3, options:[
             {c:'MGT416', n:'Strategic Management'},
             {c:'MGT428', n:'Communication Skills'},
           ]},
-          {type:'elective', id:'MIS-E6', label:'Elective 6', cr:3, options:[
+          {type:'elective', id:'MIS-E6', label:'Elective 7', cr:3, options:[
             {c:'MIS407', n:'Advanced E-commerce'},
             {c:'MIS408', n:'Accounting Information Systems'},
             {c:'MIS304', n:'Financial Information Systems'},
@@ -349,11 +353,13 @@
           {type:'course', c:'MIS303', n:'Advanced Topics in Information Systems', cr:3},
           {type:'elective', id:'MKI-E1', label:'Elective 1', cr:3, options:[
             {c:'BUA302', n:'Marketing Analytics'},
+          ]},
+          {type:'elective', id:'MKI-E1b', label:'Elective 2', cr:3, options:[
             {c:'BUA306', n:'Supply Chain Analytics'},
             {c:'BUA304', n:'Predictive Analytics'},
             {c:'ECO327', n:'Foreign Trade'},
           ]},
-          {type:'elective', id:'MKI-E2', label:'Elective 2', cr:3, options:[
+          {type:'elective', id:'MKI-E2', label:'Elective 3', cr:3, options:[
             {c:'STA306', n:'Operations Research'},
             {c:'MIS305', n:'Multimedia'},
           ]},
@@ -363,12 +369,12 @@
           {type:'course', c:'MKT401', n:'Marketing Research', cr:3},
           {type:'course', c:'MKT404', n:'E-Marketing', cr:3},
           {type:'course', c:'MKI401', n:'Graduation Project 1', cr:3},
-          {type:'elective', id:'MKI-E3', label:'Elective 3', cr:3, options:[
+          {type:'elective', id:'MKI-E3', label:'Elective 4', cr:3, options:[
             {c:'MKT402', n:'Consumer Behavior'},
             {c:'MGT413', n:'Public Relations'},
             {c:'MGT427', n:'Creative Thinking'},
           ]},
-          {type:'elective', id:'MKI-E4', label:'Elective 4', cr:3, options:[
+          {type:'elective', id:'MKI-E4', label:'Elective 5', cr:3, options:[
             {c:'MKT405', n:'New Product Planning'},
             {c:'MKT403', n:'Integrated Marketing Communications'},
             {c:'MIS409', n:'Project Management'},
@@ -378,11 +384,11 @@
           {type:'course', c:'MKT406', n:'Brand Management', cr:3},
           {type:'course', c:'MKI403', n:'Customer Analytics', cr:3},
           {type:'course', c:'MKI402', n:'Graduation Project 2', cr:3},
-          {type:'elective', id:'MKI-E5', label:'Elective 5', cr:3, options:[
+          {type:'elective', id:'MKI-E5', label:'Elective 6', cr:3, options:[
             {c:'MKT407', n:'Marketing Strategy'},
             {c:'MGT428', n:'Communication Skills'},
           ]},
-          {type:'elective', id:'MKI-E6', label:'Elective 6', cr:3, options:[
+          {type:'elective', id:'MKI-E6', label:'Elective 7', cr:3, options:[
             {c:'MKI404', n:'Customer Relationship Management'},
             {c:'MKT408', n:'International Marketing'},
             {c:'MKT409', n:'Industrial Marketing Management'},
