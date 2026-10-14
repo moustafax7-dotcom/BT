@@ -230,12 +230,23 @@
           {type:'course', c:'ARI301', n:'Introduction to Artificial Intelligence', cr:3},
           {type:'course', c:'BUA303', n:'Business Intelligence', cr:3},
           {type:'course', c:'BUA304', n:'Predictive Analytics', cr:3},
+<<<<<<< HEAD
           {type:'course', c:'BIT303', n:'Networking & Telecommunications', cr:3},
           {type:'elective', id:'BA-E1', label:'Elective 1', cr:3, options:[
             {c:'ECO414', n:'Econometrics for Time Series'},
             {c:'STA306', n:'Operations Research'},
           ]},
           {type:'elective', id:'BA-E2', label:'Elective 2', cr:3, options:[
+=======
+          {type:'elective', id:'BA-E1', label:'Elective 1', cr:3, options:[
+            {c:'BIT303', n:'Networking & Telecommunications'},
+          ]},
+          {type:'elective', id:'BA-E2', label:'Elective 2', cr:3, options:[
+            {c:'ECO414', n:'Econometrics for Time Series'},
+            {c:'STA306', n:'Operations Research'},
+          ]},
+          {type:'elective', id:'BA-E2b', label:'Elective 3', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'BUA302', n:'Marketing Analytics'},
             {c:'BUA306', n:'Supply Chain Analytics'},
             {c:'BUA307', n:'Special Topics in Business Analytics'},
@@ -246,11 +257,19 @@
           {type:'course', c:'DAS409', n:'Data Mining', cr:3},
           {type:'course', c:'BUA305', n:'Prescriptive Analytics', cr:3},
           {type:'course', c:'BUA422', n:'Graduation Project 1', cr:3},
+<<<<<<< HEAD
           {type:'elective', id:'BA-E3', label:'Elective 3', cr:3, options:[
             {c:'ECO424', n:'Business Data Forecasting'},
             {c:'STA407', n:'Qualitative & Quantitative Analysis'},
           ]},
           {type:'elective', id:'BA-E4', label:'Elective 4', cr:3, options:[
+=======
+          {type:'elective', id:'BA-E3', label:'Elective 4', cr:3, options:[
+            {c:'ECO424', n:'Business Data Forecasting'},
+            {c:'STA407', n:'Qualitative & Quantitative Analysis'},
+          ]},
+          {type:'elective', id:'BA-E4', label:'Elective 5', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'MGT416', n:'Strategic Management'},
             {c:'FIN410', n:'Investment Portfolio Management'},
             {c:'MIS409', n:'Project Management'},
@@ -260,12 +279,20 @@
           {type:'course', c:'BIT406', n:'Data Security', cr:3},
           {type:'course', c:'DAS410', n:'Foundation of Big Data', cr:3},
           {type:'course', c:'BUA425', n:'Graduation Project 2', cr:3},
+<<<<<<< HEAD
           {type:'elective', id:'BA-E5', label:'Elective 5', cr:3, options:[
+=======
+          {type:'elective', id:'BA-E5', label:'Elective 6', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'ARI413', n:'Machine Learning'},
             {c:'MIS304', n:'Financial Information Systems'},
             {c:'IST311', n:'Web Based Applications'},
           ]},
+<<<<<<< HEAD
           {type:'elective', id:'BA-E6', label:'Elective 6', cr:3, options:[
+=======
+          {type:'elective', id:'BA-E6', label:'Elective 7', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'IST312', n:'Online Analytical Processing'},
             {c:'IST309', n:'Information Retrieval and Web Search'},
           ]},
@@ -288,13 +315,24 @@
           {type:'course', c:'FIN410', n:'Investment Portfolio Management', cr:3},
           {type:'course', c:'MGT203', n:'Introduction to Human Resource Management', cr:3},
           {type:'course', c:'MIS303', n:'Advanced Topics in Information Systems', cr:3},
+<<<<<<< HEAD
           {type:'course', c:'IST311', n:'Web Based Applications', cr:3},
           {type:'elective', id:'MIS-E1', label:'Elective 1', cr:3, options:[
+=======
+          {type:'elective', id:'MIS-E1', label:'Elective 1', cr:3, options:[
+            {c:'IST311', n:'Web Based Applications'},
+          ]},
+          {type:'elective', id:'MIS-E2', label:'Elective 2', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'BUA302', n:'Marketing Analytics'},
             {c:'ECO327', n:'Foreign Trade'},
             {c:'POL203', n:'Principles of International Relations'},
           ]},
+<<<<<<< HEAD
           {type:'elective', id:'MIS-E2', label:'Elective 2', cr:3, options:[
+=======
+          {type:'elective', id:'MIS-E2b', label:'Elective 3', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'STA306', n:'Operations Research'},
             {c:'MIS305', n:'Multimedia'},
           ]},
@@ -304,12 +342,20 @@
           {type:'course', c:'IST414', n:'Mobile Applications', cr:3},
           {type:'course', c:'BIT406', n:'Data Security', cr:3},
           {type:'course', c:'MIS422', n:'Graduation Project 1', cr:3},
+<<<<<<< HEAD
           {type:'elective', id:'MIS-E3', label:'Elective 3', cr:3, options:[
+=======
+          {type:'elective', id:'MIS-E3', label:'Elective 4', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'MGT427', n:'Creative Thinking'},
             {c:'ECO305', n:'Economics of Public Finance'},
             {c:'BUA306', n:'Supply Chain Analytics'},
           ]},
+<<<<<<< HEAD
           {type:'elective', id:'MIS-E4', label:'Elective 4', cr:3, options:[
+=======
+          {type:'elective', id:'MIS-E4', label:'Elective 5', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'COS310', n:'Software Engineering'},
             {c:'MIS409', n:'Project Management'},
             {c:'MIS406', n:'Contemporary Issues in Information Technology'},
@@ -319,11 +365,19 @@
           {type:'course', c:'BIT303', n:'Networking and Telecommunications', cr:3},
           {type:'course', c:'BUA303', n:'Business Intelligence', cr:3},
           {type:'course', c:'MIS425', n:'Graduation Project 2', cr:3},
+<<<<<<< HEAD
           {type:'elective', id:'MIS-E5', label:'Elective 5', cr:3, options:[
             {c:'MGT416', n:'Strategic Management'},
             {c:'MGT428', n:'Communication Skills'},
           ]},
           {type:'elective', id:'MIS-E6', label:'Elective 6', cr:3, options:[
+=======
+          {type:'elective', id:'MIS-E5', label:'Elective 6', cr:3, options:[
+            {c:'MGT416', n:'Strategic Management'},
+            {c:'MGT428', n:'Communication Skills'},
+          ]},
+          {type:'elective', id:'MIS-E6', label:'Elective 7', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'MIS407', n:'Advanced E-commerce'},
             {c:'MIS408', n:'Accounting Information Systems'},
             {c:'MIS304', n:'Financial Information Systems'},
@@ -347,13 +401,24 @@
           {type:'course', c:'BIT303', n:'Networking and Telecommunications', cr:3},
           {type:'course', c:'MKI301', n:'Introduction to Marketing Intelligence', cr:3},
           {type:'course', c:'MIS303', n:'Advanced Topics in Information Systems', cr:3},
+<<<<<<< HEAD
           {type:'course', c:'BUA302', n:'Marketing Analytics', cr:3},
           {type:'elective', id:'MKI-E1', label:'Elective 1', cr:3, options:[
+=======
+          {type:'elective', id:'MKI-E1', label:'Elective 1', cr:3, options:[
+            {c:'BUA302', n:'Marketing Analytics'},
+          ]},
+          {type:'elective', id:'MKI-E1b', label:'Elective 2', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'BUA306', n:'Supply Chain Analytics'},
             {c:'BUA304', n:'Predictive Analytics'},
             {c:'ECO327', n:'Foreign Trade'},
           ]},
+<<<<<<< HEAD
           {type:'elective', id:'MKI-E2', label:'Elective 2', cr:3, options:[
+=======
+          {type:'elective', id:'MKI-E2', label:'Elective 3', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'STA306', n:'Operations Research'},
             {c:'MIS305', n:'Multimedia'},
           ]},
@@ -363,12 +428,20 @@
           {type:'course', c:'MKT401', n:'Marketing Research', cr:3},
           {type:'course', c:'MKT404', n:'E-Marketing', cr:3},
           {type:'course', c:'MKI401', n:'Graduation Project 1', cr:3},
+<<<<<<< HEAD
           {type:'elective', id:'MKI-E3', label:'Elective 3', cr:3, options:[
+=======
+          {type:'elective', id:'MKI-E3', label:'Elective 4', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'MKT402', n:'Consumer Behavior'},
             {c:'MGT413', n:'Public Relations'},
             {c:'MGT427', n:'Creative Thinking'},
           ]},
+<<<<<<< HEAD
           {type:'elective', id:'MKI-E4', label:'Elective 4', cr:3, options:[
+=======
+          {type:'elective', id:'MKI-E4', label:'Elective 5', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'MKT405', n:'New Product Planning'},
             {c:'MKT403', n:'Integrated Marketing Communications'},
             {c:'MIS409', n:'Project Management'},
@@ -378,11 +451,19 @@
           {type:'course', c:'MKT406', n:'Brand Management', cr:3},
           {type:'course', c:'MKI403', n:'Customer Analytics', cr:3},
           {type:'course', c:'MKI402', n:'Graduation Project 2', cr:3},
+<<<<<<< HEAD
           {type:'elective', id:'MKI-E5', label:'Elective 5', cr:3, options:[
             {c:'MKT407', n:'Marketing Strategy'},
             {c:'MGT428', n:'Communication Skills'},
           ]},
           {type:'elective', id:'MKI-E6', label:'Elective 6', cr:3, options:[
+=======
+          {type:'elective', id:'MKI-E5', label:'Elective 6', cr:3, options:[
+            {c:'MKT407', n:'Marketing Strategy'},
+            {c:'MGT428', n:'Communication Skills'},
+          ]},
+          {type:'elective', id:'MKI-E6', label:'Elective 7', cr:3, options:[
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'MKI404', n:'Customer Relationship Management'},
             {c:'MKT408', n:'International Marketing'},
             {c:'MKT409', n:'Industrial Marketing Management'},
@@ -406,8 +487,13 @@
           {type:'course', c:'DBF301', n:'Principles of Digital Banking and Fintech', cr:3},
           {type:'course', c:'DBF302', n:'Valuation of Companies and Cash Flow Generating Assets', cr:3},
           {type:'course', c:'ECO310', n:'Econometrics', cr:3},
+<<<<<<< HEAD
           {type:'course', c:'COS320', n:'Distributed Systems', cr:3},
           {type:'elective', id:'DBF-E1', label:'Elective 1', cr:3, options:[
+=======
+          {type:'elective', id:'DBF-E1', label:'Elective 1', cr:3, options:[
+            {c:'COS320', n:'Distributed Systems'},
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
             {c:'MGT307', n:'Business Ethics and Corporate Social Responsibility'},
             {c:'MGT305', n:'Entrepreneurship and Small Enterprises Management'},
             {c:'ECO331', n:'Investment Theory and Practice'},
@@ -424,11 +510,18 @@
           {type:'course', c:'COS421', n:'Cryptography Fundamentals', cr:3},
           {type:'course', c:'ECO414', n:'Econometrics for Time Series', cr:3},
           {type:'course', c:'DBF403', n:'Graduation Project 1', cr:3},
+<<<<<<< HEAD
+=======
+          {type:'course', c:'ECO415', n:'International Monetary and Financial Systems', cr:3},
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
           {type:'elective', id:'DBF-E3', label:'Elective 3', cr:3, options:[
             {c:'DBF404', n:'Data Analytics for Accounting and Finance'},
             {c:'DBF405', n:'Trading Strategies'},
             {c:'FIN409', n:'Banking Management'},
+<<<<<<< HEAD
             {c:'ECO415', n:'International Monetary and Financial Systems'},
+=======
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
           ]},
         ],
         'Semester 8': [
@@ -734,4 +827,8 @@
 
     const emptyMsg = document.getElementById('compareEmptyMsg');
     if (emptyMsg) emptyMsg.style.display = visibleCount === 0 ? 'block' : 'none';
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> d53628057fc2323a1e7067da639a6e6c58c8222f
